@@ -18,6 +18,8 @@
 
 - Author
 
+---
+
 ## Introduction
 
 This project implements a backend REST API that manages "Task" objects which represent shell commands that can be executed. Each task contains metadata such as task name, owner, and a list of previous executions. Task execution includes command output. The backend is powered by Spring Boot and uses MongoDB as the primary database.
@@ -45,13 +47,6 @@ This project implements a backend REST API that manages "Task" objects which rep
   "name": "Print Hello",
   "owner": "John Smith",
   "command": "echo Hello World",
-  "taskExecutions": [
-    {
-      "startTime": "2023-04-21T15:51:42.276Z",
-      "endTime": "2023-04-21T15:51:43.276Z",
-      "output": "Hello World"
-    }
-  ]
 }
 ```
 ---
@@ -88,26 +83,26 @@ mongod
 ```
 
 -Run the Spring Boot Application
- Using IntelliJ IDEA
- Open the project.
-
- In the src/main/java/com/example/taskmanager/TaskManagerApplication.java file:
- 
+ -Using IntelliJ IDEA
+ -Open the project.
+ -In the src/main/java/com/example/taskmanager/TaskManagerApplication.java file:
  -Right-click on the class.
  -Click Run 'TaskManagerApplication'.
 
 -Test the API using Postman
 
- URL: http://localhost:8080/tasks
- Method: PUT
- Body (JSON):
+ -URL: http://localhost:8080/tasks
+ -Method: PUT
+ -Body (JSON):
+ ```json
  {
    "id": "123",
    "name": "Print Hello",
    "owner": "John Smith",
    "command": "echo Hello World",
  }
- Click Send.
+```
+ -Click Send.
 
 -Finally check the MongoDB Compass App for the task completion.
 
